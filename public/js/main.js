@@ -1,7 +1,7 @@
 var typingField = $(".typing-field");
 var initialTime = $("#typing-time").text();
 
-$(document).ready(function() {
+$(function() {
     updatePhraseSize();
     startCounters();
     startChronometer();
