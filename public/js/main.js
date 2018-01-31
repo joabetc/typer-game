@@ -15,7 +15,7 @@ typingField.on("input", function() {
 
 var typingRemaining = $("#typing-time").text();
 
-typingField.on("focus", function() {
+typingField.one("focus", function() {
     var chronoID = setInterval(function() {
         typingRemaining--;
         $("#typing-time").text(typingRemaining);
