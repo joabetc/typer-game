@@ -1,5 +1,11 @@
 var initialTime = $("#typing-time").text();
 
+$(document).ready(function() {
+    updatePhraseSize();
+    startCounters();
+    startChronometer();
+});
+
 function updatePhraseSize() {
     var phrase = $(".phrase").text();
     var wordNumber = phrase.split(" ").length;
