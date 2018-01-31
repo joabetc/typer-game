@@ -1,3 +1,4 @@
 var phrase = $(".phrase").text();
 var wordNumber = phrase.split(" ").length;
-console.log(wordNumber);
+var phraseSize = $("#phrase-size");
+phraseSize.text(wordNumber);
