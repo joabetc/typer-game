@@ -1,1 +1,2 @@
-console.log("Hello world!");
+var phrase = jQuery(".phrase");
+console.log(phrase);
