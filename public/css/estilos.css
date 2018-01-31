@@ -10,3 +10,7 @@
 .typing-field-disabled {
     background-color: lightgray;
 }
+
+.icons {
+    vertical-align: middle;
+}
