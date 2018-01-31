@@ -1,2 +1,3 @@
 var phrase = $(".phrase").text();
-console.log(phrase);
+var wordNumber = phrase.split(" ").length;
+console.log(wordNumber);
