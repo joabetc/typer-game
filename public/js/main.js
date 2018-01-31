@@ -51,4 +51,5 @@ function restarGame() {
     $("#char-counter").text("0");
     $("#typing-time").text(initialTime);
     startChronometer();
+    typingField.removeClass("typing-field-disabled");
 }
