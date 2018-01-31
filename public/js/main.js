@@ -6,7 +6,7 @@ phraseSize.text(wordNumber);
 var typingField = $(".typing-field");
 typingField.on("input", function() {
     var content = typingField.val();
-    var numberWords = content.split(" ").length;
+    var numberWords = content.split(/\S+/).length -1;
     $("#word-counter").text(numberWords);
 
     var numberChars = content.length;
