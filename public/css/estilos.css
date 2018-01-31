@@ -5,6 +5,7 @@
 
 .phrase {
     font-size: 20px;
+    text-align: left;
 }
 
 .typing-field-disabled {
