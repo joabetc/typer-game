@@ -1,9 +1,11 @@
 var initialTime = $("#typing-time").text();
 
-var phrase = $(".phrase").text();
-var wordNumber = phrase.split(" ").length;
-var phraseSize = $("#phrase-size");
-phraseSize.text(wordNumber);
+function updatePhraseSize() {
+    var phrase = $(".phrase").text();
+    var wordNumber = phrase.split(" ").length;
+    var phraseSize = $("#phrase-size");
+    phraseSize.text(wordNumber);
+}
 
 var typingField = $(".typing-field");
 
