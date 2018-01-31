@@ -1,9 +1,11 @@
+var typingField = $(".typing-field");
 var initialTime = $("#typing-time").text();
 
 $(document).ready(function() {
     updatePhraseSize();
     startCounters();
     startChronometer();
+    $("#restart-button").click(restarGame);
 });
 
 function updatePhraseSize() {
@@ -12,8 +14,6 @@ function updatePhraseSize() {
     var phraseSize = $("#phrase-size");
     phraseSize.text(wordNumber);
 }
-
-var typingField = $(".typing-field");
 
 function startCounters() {
     typingField.on("input", function() {
@@ -41,10 +41,11 @@ function startChronometer() {
     });
 }
 
-$("#restart-button").click(function() {
+function restarGame() {
     typingField.attr("disabled", false);
     typingField.val("");
     $("#word-counter").text("0");
     $("#char-counter").text("0");
     $("#typing-time").text(initialTime);
-});
+    startChronometer();
+}
