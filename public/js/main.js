@@ -1,2 +1,2 @@
-var phrase = jQuery(".phrase");
+var phrase = $(".phrase");
 console.log(phrase);
