@@ -30,12 +30,14 @@ function startChronometer() {
     var timeRemaining = $("#typing-time").text();
 
     typingField.one("focus", function() {
+        $("#restart-button").attr("disabled", true);
         var chronoID = setInterval(function() {
             timeRemaining--;
             $("#typing-time").text(timeRemaining);
             if (timeRemaining < 1) {
                 typingField.attr("disabled", true);
                 clearInterval(chronoID);
+                $("#restart-button").attr("disabled", false);
             }
         }, 1000);
     });
