@@ -12,3 +12,16 @@ typingField.on("input", function() {
     var numberChars = content.length;
     $("#char-counter").text(numberChars);
 });
+
+var typingRemaining = $("#typing-time").text();
+
+typingField.on("focus", function() {
+    var chronoID = setInterval(function() {
+        typingRemaining--;
+        $("#typing-time").text(typingRemaining);
+        if (typingRemaining < 1) {
+            typingField.attr("disabled", true);
+            clearInterval(chronoID);
+        }
+    }, 1000);
+});
