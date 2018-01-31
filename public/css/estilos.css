@@ -6,3 +6,7 @@
 .phrase {
     font-size: 20px;
 }
+
+.typing-field-disabled {
+    background-color: lightgray;
+}

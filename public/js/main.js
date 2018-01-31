@@ -38,7 +38,7 @@ function startChronometer() {
                 typingField.attr("disabled", true);
                 clearInterval(chronoID);
                 $("#restart-button").attr("disabled", false);
-                typingField.css("background-color", "lightgrey");
+                typingField.addClass("typing-field-disabled");
             }
         }, 1000);
     });
