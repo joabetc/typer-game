@@ -50,13 +50,9 @@ function checkTyping() {
     typingField.on("input", function() {
         var typed = typingField.val();
         var comparable = phrase.substr(0, typed.length);
-        if (comparable == typed) {
-            typingField.addClass("right-typed");
-            typingField.removeClass("wrong-typed");
-        } else {
-            typingField.addClass("wrong-typed");
-            typingField.removeClass("right-typed");
-        }
+        var isCorrect = (comparable == typed);
+        typingField.toggleClass("right-typed", isCorrect);
+        typingField.toggleClass("wrong-typed", !isCorrect);
     });
 }
 
