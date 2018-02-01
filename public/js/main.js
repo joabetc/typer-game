@@ -5,6 +5,7 @@ $(function() {
     updatePhraseSize();
     startCounters();
     startChronometer();
+    checkTyping();
     $("#restart-button").click(restarGame);
 });
 
@@ -44,6 +45,21 @@ function startChronometer() {
     });
 }
 
+function checkTyping() {
+    var phrase = $(".phrase").text();
+    typingField.on("input", function() {
+        var typed = typingField.val();
+        var comparable = phrase.substr(0, typed.length);
+        if (comparable == typed) {
+            typingField.addClass("right-typed");
+            typingField.removeClass("wrong-typed");
+        } else {
+            typingField.addClass("wrong-typed");
+            typingField.removeClass("right-typed");
+        }
+    });
+}
+
 function restarGame() {
     typingField.attr("disabled", false);
     typingField.val("");
@@ -52,4 +68,6 @@ function restarGame() {
     $("#typing-time").text(initialTime);
     startChronometer();
     typingField.removeClass("typing-field-disabled");
+    typingField.removeClass("wrong-typed");
+    typingField.removeClass("right-typed");
 }
