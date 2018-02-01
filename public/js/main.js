@@ -49,7 +49,7 @@ function checkTyping() {
     var phrase = $(".phrase").text();
     typingField.on("input", function() {
         var typed = typingField.val();
-        var comparable = phrase.substr(0, typed.length);
+        var comparable = phrase.startsWith(typed);
         var isCorrect = (comparable == typed);
         typingField.toggleClass("right-typed", isCorrect);
         typingField.toggleClass("wrong-typed", !isCorrect);
