@@ -72,6 +72,10 @@ function registerScore() {
     tableBody.prepend(tableRow);
 }
 
+$("remove-button").click(function(event) {
+    event.preventDefault();
+});
+
 function restarGame() {
     typingField.attr("disabled", false);
     typingField.val("");
