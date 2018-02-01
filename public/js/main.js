@@ -64,7 +64,11 @@ function registerScore() {
     var tableBody = $(".score").find("tbody");
     var user = "Me";
     var numWords = $("#word-counter").text();
-    var tableRow = "<tr>" + "<td>" + user + "</td><td>" + numWords +  "</td></tr>";
+    var removeButton = "<a href='#' class='remove-button'><i class='small material-icons'>delete</i></a>";
+    var tableRow = "<tr><td>" + user + 
+                   "</td><td>" + numWords + 
+                   "</td><td>" + removeButton +
+                   "</td></tr>";
     tableBody.prepend(tableRow);
 }
 
