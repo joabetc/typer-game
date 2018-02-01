@@ -65,7 +65,7 @@ function registerScore() {
     var user = "Me";
     var numWords = $("#word-counter").text();
     var tableRow = "<tr>" + "<td>" + user + "</td><td>" + numWords +  "</td></tr>";
-    tableBody.append(tableRow);
+    tableBody.prepend(tableRow);
 }
 
 function restarGame() {
