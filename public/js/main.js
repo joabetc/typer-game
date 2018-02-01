@@ -36,24 +36,36 @@ function startChronometer() {
             timeRemaining--;
             $("#typing-time").text(timeRemaining);
             if (timeRemaining < 1) {
-                typingField.attr("disabled", true);
                 clearInterval(chronoID);
-                $("#restart-button").attr("disabled", false);
-                typingField.addClass("typing-field-disabled");
+                endGame();
             }
         }, 1000);
     });
+}
+
+function endGame() {
+    typingField.attr("disabled", true);
+    $("#restart-button").attr("disabled", false);
+    typingField.addClass("typing-field-disabled");
+    registerScore();
 }
 
 function checkTyping() {
     var phrase = $(".phrase").text();
     typingField.on("input", function() {
         var typed = typingField.val();
-        var comparable = phrase.startsWith(typed);
-        var isCorrect = (comparable == typed);
+        var isCorrect = phrase.startsWith(typed);
         typingField.toggleClass("right-typed", isCorrect);
         typingField.toggleClass("wrong-typed", !isCorrect);
     });
+}
+
+function registerScore() {
+    var tableBody = $(".score").find("tbody");
+    var user = "Me";
+    var numWords = $("#word-counter").text();
+    var tableRow = "<tr>" + "<td>" + user + "</td><td>" + numWords +  "</td></tr>";
+    tableBody.append(tableRow);
 }
 
 function restarGame() {
