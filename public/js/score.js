@@ -38,10 +38,9 @@ function createRow(user, numWords) {
 function removeRow(event) {
     event.preventDefault();
     var row = $(this).parent().parent();
-    row.fadeOut(1000);
-    setInterval(function() {
+    row.fadeOut(function() {
         row.remove();
-    }, 1000);
+    });
 }
 
 function showScore() {
