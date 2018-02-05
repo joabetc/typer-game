@@ -28,3 +28,7 @@
 .score {
     display: none;
 }
+
+body {
+    overflow: scroll;
+}

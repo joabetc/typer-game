@@ -1,3 +1,5 @@
+$("#score-button").click(showScore);
+
 function registerScore() {
     var tableBody = $(".score").find("tbody");
     var user = "Me";
@@ -26,4 +28,8 @@ function createRow(user, numWords) {
 function removeRow(event) {
     event.preventDefault();
     $(this).parent().parent().remove();
+}
+
+function showScore() {
+    $(".score").toggle();
 }
