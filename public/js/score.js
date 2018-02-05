@@ -35,5 +35,5 @@ function removeRow(event) {
 }
 
 function showScore() {
-    $(".score").slideToggle(600);
+    $(".score").stop().slideToggle(600);
 }
