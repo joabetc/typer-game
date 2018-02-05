@@ -7,6 +7,16 @@ function registerScore() {
     var tableRow = createRow(user, numWords);
     tableRow.find(".remove-button").click(removeRow);
     tableBody.prepend(tableRow);
+
+    $(".score").slideDown(500);
+    scrollScore();
+}
+
+function scrollScore() {
+    var scorePosition = $(".score").offset().top;
+    $("body").animate({
+        scrollTop: scorePosition + "px"
+    }, 1000);
 }
 
 function createRow(user, numWords) {
