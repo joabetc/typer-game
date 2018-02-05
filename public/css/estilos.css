@@ -24,3 +24,7 @@
 .wrong-typed {
     border: 3px solid red;
 }
+
+.score {
+    display: none;
+}
