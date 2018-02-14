@@ -9,6 +9,11 @@ $(function() {
     $("#restart-button").click(restarGame);
 });
 
+function updateStartTypingTime(time) {
+    $("#typing-time").text(time);
+
+}
+
 function updatePhraseSize() {
     var phrase = $(".phrase").text();
     var wordNumber = phrase.split(" ").length;

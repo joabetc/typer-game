@@ -9,4 +9,5 @@ function changePhrase(data) {
     var randomNumber = Math.floor(Math.random() * data.length);
     phrase.text(data[randomNumber].texto);
     updatePhraseSize();
+    updateStartTypingTime(data[randomNumber].tempo);
 }
