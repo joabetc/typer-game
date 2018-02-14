@@ -1,12 +1,16 @@
 $("#phrase-button").click(randomPhrase);
 
 function randomPhrase() {
+    $("#spinner").show();
     $.get("http://localhost:3000/frases", changePhrase)
         .fail(function() {
             $("#error").show();
             setTimeout(function() {
                 $("#error").toggle();
             }, 2000);
+        })
+        .always(function() {
+            $("#spinner").toggle();
         });
 }
 
