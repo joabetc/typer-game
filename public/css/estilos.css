@@ -45,3 +45,7 @@ body {
 #phrase-id {
     width: 40px;
 }
+
+#sync-button {
+    float: right;
+}
