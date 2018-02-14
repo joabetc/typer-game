@@ -74,6 +74,7 @@ function loadScore() {
     $.get("http://localhost:3000/placar", function(data) {
         $(data).each(function() {
             var row = createRow(this.usuario, this.pontos);
+            row.find(".remove-button").click(removeRow);
             $("tbody").append(row);
         });
     });
