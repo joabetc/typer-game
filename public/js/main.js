@@ -34,9 +34,8 @@ function startCounters() {
 }
 
 function startChronometer() {
-    var timeRemaining = $("#typing-time").text();
-
     typingField.one("focus", function() {
+        var timeRemaining = $("#typing-time").text();
         $("#restart-button").attr("disabled", true);
         var chronoID = setInterval(function() {
             timeRemaining--;
