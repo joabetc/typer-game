@@ -7,6 +7,7 @@ $(function() {
     startChronometer();
     checkTyping();
     $("#restart-button").click(restarGame);
+    loadScore();
 });
 
 function updateStartTypingTime(time) {

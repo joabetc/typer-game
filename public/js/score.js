@@ -69,3 +69,12 @@ function syncScore() {
         console.log("Saved score to server");
     });
 }
+
+function loadScore() {
+    $.get("http://localhost:3000/placar", function(data) {
+        $(data).each(function() {
+            var row = createRow(this.usuario, this.pontos);
+            $("tbody").append(row);
+        });
+    });
+}
