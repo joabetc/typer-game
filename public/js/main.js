@@ -10,6 +10,7 @@ $(function() {
 });
 
 function updateStartTypingTime(time) {
+    initialTime = time;
     $("#typing-time").text(time);
 
 }
