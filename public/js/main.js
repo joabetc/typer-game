@@ -57,8 +57,8 @@ function endGame() {
 }
 
 function checkTyping() {
-    var phrase = $(".phrase").text();
     typingField.on("input", function() {
+        var phrase = $(".phrase").text();
         var typed = typingField.val();
         var isCorrect = phrase.startsWith(typed);
         typingField.toggleClass("right-typed", isCorrect);
