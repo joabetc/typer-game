@@ -1,4 +1,5 @@
 $("#score-button").click(showScore);
+$("#sync-button").click(syncScore);
 
 function registerScore() {
     var tableBody = $(".score").find("tbody");
@@ -45,4 +46,26 @@ function removeRow(event) {
 
 function showScore() {
     $(".score").stop().slideToggle(600);
+}
+
+function syncScore() {
+    var score = [];
+    var rows = $("tbody > tr");
+    rows.each(function() {
+        var user = $(this).find("td:nth-child(1)").text();
+        var words = $(this).find("td:nth-child(2)").text();
+        var scoreItem = {
+            usuario: user,
+            pontos: words
+        };
+        score.push(scoreItem);
+    });
+
+    var data = {
+        placar: score
+    };
+
+    $.post("http://localhost:3000/placar", data, function() {
+        console.log("Saved score to server");
+    });
 }
