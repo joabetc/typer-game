@@ -71,6 +71,11 @@ function syncScore() {
     })
     .fail(function() {
         $(".tooltip").tooltipster("open").tooltipster("content", "Synchronization failed");
+    })
+    .always(function() {
+        setTimeout(function() {
+            $(".tooltip").tooltipster("close");
+        }, 1200);
     });
 }
 
