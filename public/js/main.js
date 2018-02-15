@@ -12,7 +12,9 @@ $(function() {
         create: true,
         sortField: 'text'
     });
-    $(".tooltip").tooltipster();
+    $(".tooltip").tooltipster({
+        trigger: "custom"
+    });
 });
 
 function updateStartTypingTime(time) {

@@ -67,6 +67,7 @@ function syncScore() {
 
     $.post("http://localhost:3000/placar", data, function() {
         console.log("Saved score to server");
+        $(".tooltip").tooltipster("open");
     });
 }
 
