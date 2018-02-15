@@ -8,6 +8,10 @@ $(function() {
     checkTyping();
     $("#restart-button").click(restarGame);
     loadScore();
+    $("#users").selectize({
+        create: true,
+        sortField: 'text'
+    });
 });
 
 function updateStartTypingTime(time) {
