@@ -3,7 +3,7 @@ $("#sync-button").click(syncScore);
 
 function registerScore() {
     var tableBody = $(".score").find("tbody");
-    var user = "Me";
+    var user = $("#users").val();
     var numWords = $("#word-counter").text();
     var tableRow = createRow(user, numWords);
     tableRow.find(".remove-button").click(removeRow);
